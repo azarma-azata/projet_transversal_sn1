@@ -1,0 +1,12 @@
+.container {
+    display: grid;
+    grid-template-areas: "1 . . 2 3";
+}
+
+.logo {
+    grid-area: "1";
+}
+
+.log_btn {
+    grid-area: "2";
+}
