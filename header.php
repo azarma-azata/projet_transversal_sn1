@@ -3,9 +3,7 @@
     <link rel="stylesheet" href="css/header.css">
     <div class="container">
         <nav class="menu-container">
-        <!-- burger menu -->
         <input type="checkbox" aria-label="Toggle menu" />
-        <!-- menu items -->
         <div class="menu">
             <ul>
             <li>
@@ -30,13 +28,11 @@
                 <a><?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8'); ?></a>
             </li>
             <li>
-                <a href="">
-                logout
-                </a>
+                <form method="post"><button class="btn" name="logout">Logout</button></form>
             </li>
             <?php else: ?>
             <li>
-                <a href="">
+                <a href="./register.php">
                 Sign-up
                 </a>
             </li>

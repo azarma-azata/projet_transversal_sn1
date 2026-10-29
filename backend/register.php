@@ -2,6 +2,12 @@
 
 require_once 'config.php';
 
+//auto redirect if user is already logged in
+if (isset($_SESSION['username'], $_SESSION['username'])) {
+    header('Location: index.php');
+}
+
+//check if the password match CNIL requirements 
 function passwd_strenght(string $password): bool
 {
     $length = mb_strlen($password);
@@ -17,7 +23,7 @@ function passwd_strenght(string $password): bool
     return ($length >= 12 && $types === 4) || ($length >= 14 && $types >= 3);
 }
 
-
+//main logic activated by receiving the form
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -28,11 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['logout'])) {
         session_unset();
         session_destroy();
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '' || $username === '' ) {
+    } 
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '' || $username === '' ) {
         $message = "Veuillez renseigner un email valide, un nom d'utilisateur et un mot de passe.";
-    } elseif (!passwd_strenght($password)){
+    } 
+    elseif (!passwd_strenght($password)){
         $message = "Mot de passe non sécurisé!";
-    } else {
+    } 
+    else {
         try {
             $sth = $dbh->prepare('INSERT INTO `users` (`username`, `email`, `password_hash`) VALUES (:username, :email, :password)');
             $sth->execute([
@@ -42,7 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ]);
             $_SESSION['username'] = $username;
             header('Location: index.php');
-        } catch (Exception $e) {
+        } 
+        catch (Exception $e) {
             $message = "Une erreur est survenue :( " . $e->getMessage();
         }
     }
