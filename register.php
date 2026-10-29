@@ -6,6 +6,7 @@
         <title>Compte utilisateur</title>
     </head>
     <body>
+        <?php require 'header.php'; ?>
         <?php if (isset($_SESSION['username'])): ?>
             <p>Bonjour, <?= htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8') ?> !</p>
             <form method="post"><button name="logout">Se déconnecter</button></form>

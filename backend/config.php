@@ -4,9 +4,9 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 
 //session dump for debugging
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';  
+//echo '<pre>';
+//print_r($_SESSION);
+//echo '</pre>';  
 
 $pdo = new PDO(
     'mysql:host=localhost;dbname=pendu;charset=utf8mb4',
