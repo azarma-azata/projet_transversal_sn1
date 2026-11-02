@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+  <g stroke="currentColor" stroke-width="0.5">
+    <line data-a="0" data-b="1" x1="50" y1="10" x2="47" y2="90"/>
+    <line data-a="2" data-b="3" x1="24" y1="40" x2="74" y2="52"/>
+  </g>
+  <circle id="s0" cx="50" cy="10" r="2.5"/>
+  <circle id="s1" cx="47" cy="90" r="2.5"/>
+  <circle id="s2" cx="24" cy="40" r="2.5"/>
+  <circle id="s3" cx="74" cy="52" r="2.5"/>
+</svg>

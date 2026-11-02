@@ -1,1 +1,2 @@
 ErrorDocument 404 /EPSI_PENDU/404.php
+ErrorDocument 403 /EPSI_PENDU/403.php
