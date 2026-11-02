@@ -17,7 +17,7 @@ const GAME_POINTS_PER_LETTER = 5;
 function game_difficulty_multiplier(string $difficulty): float
 {
     return match ($difficulty) {
-        'hard'   => 2.0,
+        'hard'   => 3,
         'medium' => 1.5,
         default  => 1.0,
     };
