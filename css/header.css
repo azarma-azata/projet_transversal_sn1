@@ -12,12 +12,17 @@ body {
   align-items: center;
   
   margin: 1rem;
-  padding: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.2);
-  color: #000;
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(24px) saturate(1.4);
-  user-select: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  text-align: left;
 }
 
 .btn {
@@ -29,7 +34,7 @@ body {
   font: inherit;
   border-radius: 0;
   appearance: none;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .btn:hover {
@@ -40,12 +45,12 @@ body {
 .menu-container a {
   appearance: none;
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   transition: color 0.3s ease;
 }
 
 .menu-container a:hover {
-  color: #240088;
+  color: #adadad;
 }
 
 .menu-container input {
@@ -115,7 +120,11 @@ body {
   }
 
   .menu-container a {
-    color: #000000;
+    color: #ffffff;
+  }
+
+  .menu-container a:hover {
+    color: #adadad;
   }
 
   .menu-container input {
