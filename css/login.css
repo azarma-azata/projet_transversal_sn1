@@ -1,10 +1,99 @@
+.auth {
+  position: relative;
+  margin: 10%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  color: #000;
+  backdrop-filter: blur(24px) saturate(1.4);
+  border-radius: 1rem;
+}
+
+auth {
+  width: min(100% - 2rem, 420px);
+  margin: 2rem auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(24px) saturate(1.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  color: #000;
+}
+ 
+.auth h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.6rem;
+}
+ 
+.auth-intro {
+  margin: 0 0 1.5rem;
+  opacity: 0.7;
+}
+ 
+.auth-error {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid #c0392b;
+  border-radius: 0.25rem;
+  background: rgba(192, 57, 43, 0.12);
+}
+ 
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+ 
+.auth-form label {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+}
+ 
+.auth-form input {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  color: inherit;
+  font: inherit;
+}
+ 
+.auth-form input:focus {
+  outline: 2px solid #240088;
+  outline-offset: 1px;
+}
+ 
+.auth-form button {
+  margin-top: 1.2rem;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #240088;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+ 
+.auth-form button:hover {
+  filter: brightness(1.25);
+}
+ 
 .auth-switch {
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 1.5rem 0 0;
+  font-size: 0.9rem;
 }
-
+ 
 .auth-switch a {
-    color: #00C6A7;
+  color: #240088;
+  font-weight: bold;
 }

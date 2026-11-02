@@ -11,8 +11,7 @@
 <body>
     <div class="stars"></div>
     <?php require 'header.php'; ?>
-    <main class="auth">
-        <h1>Retour à bord</h1>
+    <div class="auth">
         <p class="auth-intro">Connecte-toi pour reprendre tes parties.</p>
         <?php if ($message !== ''): ?>
             <p class="auth-error" role="alert"><?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?></p>
@@ -25,6 +24,6 @@
             <button type="submit">Se connecter</button>
         </form>
         <p class="auth-switch">Pas encore de compte ? <a href="register.php">S'inscrire</a></p>
-    </main>
+        </div>
 </body>
 </html>
