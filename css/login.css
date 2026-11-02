@@ -1,0 +1,10 @@
+.auth-switch {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.auth-switch a {
+    color: #00C6A7;
+}

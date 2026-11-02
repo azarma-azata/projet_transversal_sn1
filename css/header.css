@@ -1,3 +1,4 @@
+@import url(background.css);
 body {
   overflow-x: hidden;
   font-family: Sans-Serif;
@@ -6,16 +7,17 @@ body {
 
 .menu-container {
   position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  background: #232323;
-  color: #cdcdcd;
+  
+  margin: 1rem;
   padding: 20px;
-  z-index: 1;
-  -webkit-user-select: none;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #000;
+  backdrop-filter: blur(24px) saturate(1.4);
   user-select: none;
-  box-sizing: border-box;
 }
 
 .btn {
@@ -27,23 +29,23 @@ body {
   font: inherit;
   border-radius: 0;
   appearance: none;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .btn:hover {
-  color: #00C6A7;
+  color: #240088;
   cursor: pointer;
 }
 
 .menu-container a {
   appearance: none;
   text-decoration: none;
-  color: #232323;
+  color: #000000;
   transition: color 0.3s ease;
 }
 
 .menu-container a:hover {
-  color: #00C6A7;
+  color: #240088;
 }
 
 .menu-container input {
@@ -106,42 +108,14 @@ body {
   font-size: 22px;
 }
 
-/* mobile styles */
-@media only screen and (max-width: 767px) { 
-  .menu-container {
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  .menu {
-    position: absolute;
-    box-sizing: border-box;
-    width: 300px;
-    right: -300px;
-    top: 0;
-    margin: -20px;
-    padding: 75px 50px 50px;
-    background: #cdcdcd;
-    -webkit-font-smoothing: antialiased;
-    /* to stop flickering of text in safari */
-    transform-origin: 0% 0%;
-    transform: translateX(0%);
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  }
-
-  .menu-container input:checked ~ .menu {
-    transform: translateX(-100%);
-  }
-}
-
 /* desktop styles */
 @media only screen and (min-width: 768px) { 
   .menu-container {
-    width: 100%;
+    backdrop-filter: blur(24px) saturate(1.4);
   }
 
   .menu-container a {
-    color: #cdcdcd;
+    color: #000000;
   }
 
   .menu-container input {

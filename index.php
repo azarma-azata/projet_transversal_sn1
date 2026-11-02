@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    <div class="stars"></div>
     <?php require 'header.php'; ?>
 </body>
 </html>

@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="./login.php">
                 Login
                 </a>
             </li>
