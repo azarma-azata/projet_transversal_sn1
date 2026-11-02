@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 28, 2026 at 11:27 AM
+-- Generation Time: Nov 02, 2026 at 06:43 AM
 -- Server version: 8.4.7
 -- PHP Version: 8.3.28
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `pendu`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `constellation`
+--
+
+DROP TABLE IF EXISTS `constellation`;
+CREATE TABLE IF NOT EXISTS `constellation` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `star_count` int NOT NULL,
+  `svg_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -56,16 +71,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `password_hash`, `created_at`, `email`) VALUES
-(8, 'a', '$2y$10$RSX0nYXmxVrCQLUZCKpOuupzKbcx0zgSz.18fDrMijvQrio29uW7.', '2026-10-28 11:20:26', 'a@a.a'),
-(7, 'az', '$2y$10$hherA3ZFFdewwmFa0q9Jz.1mG4WXqmO3eI4SRGrVTqH3WSrXfuDaO', '2026-10-28 11:19:53', 'a@a.a'),
-(6, 'aza', '$2y$10$zIZKZXs24ker3wq4/YTDAOi9xrpVVpp8hWh0IDAMOVaSqpOA2ieR.', '2026-10-28 11:16:16', 'a@a.a');
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
