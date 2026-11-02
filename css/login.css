@@ -1,16 +1,4 @@
 .auth {
-  position: relative;
-  margin: 10%;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.2);
-  color: #000;
-  backdrop-filter: blur(24px) saturate(1.4);
-  border-radius: 1rem;
-}
-
-.auth {
   width: min(100% - 2rem, 420px);
   margin: 2rem auto;
   padding: 2rem;
