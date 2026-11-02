@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="css/header.css">
     <div class="container">
         <nav class="menu-container">
-        <input type="checkbox" aria-label="Toggle menu" />
         <div class="menu">
             <ul>
             <li>

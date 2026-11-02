@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendu</title>
     <link rel="stylesheet" href="css/index.css">
+    <linl rel="stylesheet" href="css/background.css">
 </head>
 <body>
     <div class="stars"></div>
