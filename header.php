@@ -1,4 +1,6 @@
 <?php require_once 'backend/config.php';?>
+<?php require_once 'backend/logout.php';?>
+
 <header class="site-header">
     <link rel="stylesheet" href="css/header.css">
     <div class="container">
