@@ -36,10 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_destroy();
     } 
     elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '' || $username === '' ) {
-        $message = "Veuillez renseigner un email valide, un nom d'utilisateur et un mot de passe.";
+        $message = "Please input an username, email and strong password.";
     } 
     elseif (!passwd_strenght($password)){
-        $message = "Mot de passe non sécurisé!";
+        $message = "Weak password! please follow instruction down below.";
     } 
     else {
         try {
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: index.php');
         } 
         catch (Exception $e) {
-            $message = "Une erreur est survenue :( " . $e->getMessage();
+            $message = "Welp i have no idea what happen :( " . $e->getMessage();
         }
     }
 }

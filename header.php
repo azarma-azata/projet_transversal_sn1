@@ -20,7 +20,7 @@
             </li>
             <li>
                 <a href="./game.php">
-                jouer
+                Play
                 </a>
             </li>
             </ul>

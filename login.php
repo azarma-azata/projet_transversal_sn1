@@ -12,18 +12,18 @@
     <div class="stars"></div>
     <?php require 'header.php'; ?>
     <div class="auth">
-        <p class="auth-intro">Connecte-toi pour reprendre tes parties.</p>
+        <p class="auth-intro">Login to your account</p>
         <?php if ($message !== ''): ?>
             <p class="auth-error" role="alert"><?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?></p>
         <?php endif; ?>
         <form method="post" class="auth-form">
-            <label for="username">Nom d'utilisateur</label>
+            <label for="username">Username</label>
             <input id="username" name="username" maxlength="32" autocomplete="username" required value="<?= htmlspecialchars($username, ENT_QUOTES, 'UTF-8') ?>">
-            <label for="password">Mot de passe</label>
+            <label for="password">Password</label>
             <input id="password" type="password" name="password" maxlength="200" autocomplete="current-password" required>
-            <button type="submit">Se connecter</button>
+            <button type="submit">login</button>
         </form>
-        <p class="auth-switch">Pas encore de compte ? <a href="register.php">S'inscrire</a></p>
+        <p class="auth-switch">Need an account ? <a href="register.php">Register</a></p>
         </div>
 </body>
 </html>

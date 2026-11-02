@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     if ($username === '' || $password === '') {
-        $message = "Veuillez renseigner votre nom d'utilisateur et votre mot de passe.";
+        $message = "Please input your username and password";
     }
     else {
         try {
@@ -30,10 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('Location: index.php');
                 exit;
             }
-            $message = "Nom d'utilisateur ou mot de passe incorrect.";
+            $message = "Invalid username or password";
         }
         catch (PDOException $e) {
-            $message = "Une erreur est survenue, réessaie plus tard.";
+            $message = "Welp i suck at coding :(";
         }
     }
 }
