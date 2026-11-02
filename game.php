@@ -10,5 +10,9 @@
 <body>
     <div class="stars"></div>
     <?php require 'header.php'; ?>
+     <div class="game">
+        <div class="star"></div>
+        <div class="guess"></div>
+     </div>
 </body>
 </html>

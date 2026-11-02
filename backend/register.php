@@ -52,9 +52,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $username;
             header('Location: index.php');
         } 
-        catch (Exception $e) {
-            $message = "Welp i have no idea what happen :( " . $e->getMessage();
+        catch (PDOException $e) {
+            $message = ($e->errorInfo[1] ?? null) === 1062
+                ? "This username is already taken."
+                : "I have no idea what happen :(";
         }
+
     }
 }
 ?>
