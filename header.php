@@ -13,8 +13,8 @@
                 </a>
             </li>
             <li>
-                <a href="">
-                Stats
+                <a href="./leaderboard.php">
+                Leaderboard
                 </a>
             </li>
             <li>
@@ -26,7 +26,7 @@
             <ul>
             <?php if (isset($_SESSION['username'], $_SESSION['username'])): ?>
             <li>
-                <a><?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8'); ?></a>
+                <a href="./profile.php"><?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8'); ?></a>
             </li>
             <li>
                 <form method="post"><button class="btn" name="logout">Logout</button></form>
