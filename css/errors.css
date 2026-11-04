@@ -1,7 +1,19 @@
 .error_message {
+    position: relative;
+    align-items: center;
+
+    margin: 10rem 20% 20% 20%;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(24px) saturate(1.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
+    font-family: monospace;
+    font-size: large;
     text-align: center;
-    background-color: white;
-    width: 50%;
-    padding: 1rem;
+    color: rgb(255, 255, 255);
 }
 
