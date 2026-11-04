@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: index.php');
         } 
         catch (PDOException $e) {
-            $message = ($e->errorInfo[1] ?? null) === 1062
+            $message = ($e->errorInfo[1] ?? null) === 1062 //dplicaa eror code
                 ? "This username is already taken."
                 : "I have no idea what happen :(";
         }

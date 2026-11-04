@@ -1,14 +1,8 @@
 <?php
-
+/*discolure : AI was useed for math purpose only sadly it added a sh... a lot of comments
+as you can see by the git history. I've taken the time to rewrite them or delete as see fit.
+*/
 require_once 'config.php';
-
-/*
- * Game state lives in $_SESSION['game'] (the word never reaches the browser):
- *   word_id, word, difficulty, constellation_id, name, svg_path, star_count,
- *   guessed[] (letters tried), wrong (misses), saved (row written to `games`)
- *
- * Lives = stars of the chosen constellation. Every miss puts one star out.
- */
 
 const GAME_POINTS_PER_LIFE   = 10;
 const GAME_POINTS_PER_LETTER = 5;
@@ -17,7 +11,7 @@ const GAME_POINTS_PER_LETTER = 5;
 function game_difficulty_multiplier(string $difficulty): float
 {
     return match ($difficulty) {
-        'hard'   => 3,
+        'hard'   => 3.0,
         'medium' => 1.5,
         default  => 1.0,
     };
@@ -30,14 +24,13 @@ function game_points(string $difficulty, int $lives_left, int $word_len): int
     return (int) round($base * game_difficulty_multiplier($difficulty));
 }
 
-// All constellations, most stars (= easiest) first.
+// get constellation list by difficulty (easiest to harded)
 function game_constellations(PDO $dbh): array
 {
     return $dbh->query('SELECT `id`, `name`, `star_count`, `svg_path` FROM `constellation` ORDER BY `star_count` DESC, `id`')->fetchAll();
 }
 
-// Constellations are the difficulty choices: the more stars (lives), the easier the words.
-// Spread them over easy / medium / hard, whatever the number of constellations in the table.
+//sort the constellation into the different difficulty (UI only)
 function game_difficulty_for(int $constellation_id, array $constellations): string
 {
     $tiers = ['easy', 'medium', 'hard'];
@@ -50,10 +43,7 @@ function game_difficulty_for(int $constellation_id, array $constellations): stri
     return 'easy';
 }
 
-// Constellations plus the stats shown on the selection cards:
-// difficulty, number of words in its set, and the points a win can give
-// (same formula as game_save(): lowest = 1 life left on the shortest word,
-// highest = no miss on the longest word).
+//Generate the card information displayed at the constellation selection (word list, possible point gain)
 function game_constellation_cards(PDO $dbh): array
 {
     $constellations = game_constellations($dbh);
